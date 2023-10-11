@@ -1,0 +1,74 @@
+Errors in strlcat: /nfs/homes/cmoura-p/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strlcat
+Test 4:
+    dest[14] = 'a';
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test04.output):
+32$
+rrrrrrlorem ip^@
+Your result (cat -e user_output_test04):
+26$
+rrrrrrlorem ip^@
+Test 5:
+    dest[10] = 'a';
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test05.output):
+26$
+rrrrrr^@^@^@^@a^@^@^@^@
+Your result (cat -e user_output_test05):
+6$
+rrrrrr^@^@^@^@a^@^@^@^@
+Test 6:
+    dest[10] = 'a';
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 1));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test06.output):
+27$
+rrrrrr^@^@^@^@a^@^@^@^@
+Your result (cat -e user_output_test06):
+7$
+rrrrrr^@^@^@^@a^@^@^@^@
+Test 7:
+    memset(dest, 'r', 15);
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test07.output):
+31$
+rrrrrrrrrrrrrrr
+Your result (cat -e user_output_test07):
+20$
+rrrrrrrrrrrrrrr
+Test 8:
+    dest[10] = 'a';
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 6));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test08.output):
+32$
+rrrrrr^@^@^@^@a^@^@^@^@
+Your result (cat -e user_output_test08):
+12$
+rrrrrr^@^@^@^@a^@^@^@^@
+Test 9:
+    memset(dest, 'r', 14);
+    ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
+    write(1, "\n", 1);
+    write(1, dest, 15);
+Expected (cat -e test09.output):
+40$
+rrrrrrrrrrrrrr^@
+Your result (cat -e user_output_test09):
+26$
+rrrrrrrrrrrrrr^@
+Errors in strncmp: /nfs/homes/cmoura-p/francinette/temp/libft/war-machine/tests/Part1_functions/ft_strncmp
+Test 11:
+    ft_print_result(ft_strncmp("test\200", "test\0", 6));
+Expected (cat -e test11.output):
+1
+Your result (cat -e user_output_test11):
+-1

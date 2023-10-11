@@ -1,0 +1,18 @@
+/usr/bin/ld: /tmp/ccRvqFkp.o: in function `main':
+main.c:(.text+0x0): multiple definition of `main'; /tmp/ccoJL4pn.o:ft_strlen.c:(.text+0x32): first defined here
+collect2: error: ld returned 1 exit status
+
+0$
+\n
+\n
+-------
+
+3$
+\n
+\n
+-------
+
+75$
+\n
+\n
+-------
