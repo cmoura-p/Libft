@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 15:26:24 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/16 18:56:00 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/10/16 19:33:31 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/16 21:07:55 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
-	int	sign;
-	int	num;
+	unsigned char	*memosrc;
+	unsigned char	*memodest;
+	unsigned int	i;
 
-	sign = 1;
-	num = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
+	if (src == NULL && dest == NULL)
+		return (dest);
+	memosrc = (unsigned char *)src;
+	memodest = (unsigned char *)dest;
+	i = 0;
+	while (i < size)
 	{
-		num = num * 10 + (*str - 48);
-		str++;
+		memodest[i] = memosrc[i];
+		i++;
 	}
-	return (num * sign);
+	return (dest);
 }

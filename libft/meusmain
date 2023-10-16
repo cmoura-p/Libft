@@ -1,49 +1,54 @@
-/*
-FT_STRLCAT
-int main(void)
-{
-   	char	dest[10] = "dest";
-	char	src[10] = "src";
-	int	size = 6;
+/* 
+Como testar as funcoes {arquivos main()}
+#include <stdio.h>
+#include <string.h>
 
-	printf("Dest Before: %s\n", dest);
-	printf("Return of strlcat: %d\n", ft_strlcat(dest, src, size));
-	printf("Return of strlcat do sistema: %d\n", strlcat(dest, src, size));
-	printf("Dest after: %s\n", dest);
-}
-*/
-//-----------------------------------------------------------------------
-/*
-FT_STR_IS_PRINTABLE
-int	main(int argc, char **argv)
-{
-	int	flag;
+-----------------------------------------------------------------------
 
-	if (argc > 1)
-		flag = ft_str_is_printable(argv[1]);/*
-	else
-		flag = ft_str_is_printable("");
-	printf("%d %s\n", flag, argv[1]);
-	return (0);
-}
-*/
-//-----------------------------------------------------------------------
-/*
-FT_STR_IS_NUMERIC
-int	main(int argc, char **argv)
-{
-	int	flag;
+    memcpy
+    char source[] = "Origem";
+    char destination[20];
+    memcpy(destination, source, strlen(source) + 1);
+    printf("Exemplo com memcpy: %s\n", destination);
 
-	if (argc > 1)
-	{
-		flag = ft_str_is_numeric(argv[1]);
-		printf("%d %s\n", flag, argv[1]);
-	}
-	return (0);
-}
+
+    memset
+    char buffer[10];
+    memset(buffer, 'A', sizeof(buffer));
+    printf("Exemplo com memset: %s\n", buffer);
+
+
+    memcmp
+    char str1[] = "Hello";
+    char str2[] = "World";
+    int result = memcmp(str1, str2, 5);
+    if (result == 0) {
+        printf("Exemplo com memcmp: As strings são iguais.\n");
+    } else {
+        printf("Exemplo com memcmp: As strings são diferentes.\n");
+    }
+
+
+    memmove
+    char data[] = "ABCDEFG";
+    memmove(data + 2, data, 4);
+    printf("Exemplo com memmove: %s\n", data);
+
+
+    memchr
+    const char *text = "Encontre o 'o' nesta string.";
+    char search_char = 'o';
+    const char *result_ptr = (const char *)memchr(text, search_char, strlen(text));
+    if (result_ptr != NULL) {
+        printf("Exemplo com memchr: Caractere '%c' encontrado na posição %ld.\n", search_char, result_ptr - text);
+    } else {
+        printf("Exemplo com memchr: Caractere '%c' não encontrado na string.\n", search_char);
+    }
+
+
 //------------------------------------------------------------------
 /*
-FT_STR_IS_ALPHA
+FT_ISALPHA
 int     main(int argc, char **argv)
 {
 	int	flag;
