@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 20:21:37 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/17 16:32:37 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/10/17 19:05:39 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/17 19:41:58 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// compara os ponteiros *s1 com *s2 nos primeiros n caracteres
-// retorna um inteiro 0 se for ok
-// retorna um menor ou maior que de pendendendo da diferenca
-
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strdup(const char *str)
 {
-	size_t	i;
+	char	*ptr;
+	size_t	size;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while ((s1[i] != '\0' && i < n) && (s1[i] == s2[i]))
-	{
-		i++;
-	}
-	if (i == n)
-		i--;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	size = ft_strlen(str) + 1;
+	ptr = (char *) malloc(size * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	ft_strlcpy(ptr, str, size);
+	return ((char *) ptr);
 }

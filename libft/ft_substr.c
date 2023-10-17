@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 20:21:37 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/17 16:32:37 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/10/17 19:59:06 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/17 20:34:50 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// compara os ponteiros *s1 com *s2 nos primeiros n caracteres
-// retorna um inteiro 0 se for ok
-// retorna um menor ou maior que de pendendendo da diferenca
-
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char	*sub;
 	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while ((s1[i] != '\0' && i < n) && (s1[i] == s2[i]))
+	size_t	f;
+	
+	i = start;
+	if (s == NULL || len == 0 || s[i] == '\0')
+		return (NULL);
+	sub = (char *) malloc(len * sizeof(char));
+	if (!sub)
+		return (NULL);
+	f = 0;
+	while (f < len && s[i])
 	{
+		sub[f] = (char) s[i];
 		i++;
+		f++;
 	}
-	if (i == n)
-		i--;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	sub[f] = '\0';
+	return (ft_strdup(sub));
 }
+/*	nao perebo a utilizacao do ft_strdup
+	aqui vou estar fazendo outro malloc
+	alem de que a strdup chama strlcpy
+*/

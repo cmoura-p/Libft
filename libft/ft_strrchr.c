@@ -20,13 +20,13 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	find_c;
 	char	*found_c;
-	int		s_len;
+	int		size;
 
 	find_c = c;
 	found_c = NULL;
-	s_len = ft_strlen(s);
+	size = ft_strlen(s);
 	if (c == '\0')
-		return ((char *)s + s_len);
+		return ((char *)s + size);
 	while (*s)
 	{
 		if (*s == find_c)
