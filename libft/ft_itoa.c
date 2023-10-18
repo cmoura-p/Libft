@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 19:59:06 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/18 17:04:13 by cmoura-p         ###   ########.fr       */
+/*   Created: 2023/10/18 19:02:19 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/18 19:58:02 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
-	char	*sub;
-	size_t	i;
-	size_t	f;
+	char		*str;
+	int			i;
+	long int	num;
 
-	i = start;
-	if (s == NULL || len == 0 || s[i] == '\0')
-		return (NULL);
-	sub = (char *) malloc(len * sizeof(char));
-	if (!sub)
-		return (NULL);
-	f = 0;
-	while (f < len && s[i])
+	num = n;
+	i = 0;
+	if (num < 0)
+		num = num * -1;
+	while (n / 10)
 	{
-		sub[f] = (char) s[i];
+		n = n / 10;
 		i++;
-		f++;
 	}
-	sub[f] = '\0';
-	return (sub);
+	str = (char *)malloc(sizeof(char)) * (i + 1);
+	while (i-- > 0)
+	{
+		str[i] = num % 10;
+		num = num / 10;
+	}
+	return (str + '/0');
 }

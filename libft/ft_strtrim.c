@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 19:59:06 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/18 17:04:13 by cmoura-p         ###   ########.fr       */
+/*   Created: 2023/10/18 17:43:59 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/18 18:45:07 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*sub;
-	size_t	i;
-	size_t	f;
+	char		*s3;
+	int			ini;
+	int			fim;
+	int			size;
 
-	i = start;
-	if (s == NULL || len == 0 || s[i] == '\0')
+	if (!s1 || !set)
 		return (NULL);
-	sub = (char *) malloc(len * sizeof(char));
-	if (!sub)
+	ini = 0;
+	fim = ft_strlen(s1) - 1;
+	while (s1[ini] == set)
+		ini++;
+	while (s1[fim] == set)
+		fim--;
+	size = fim - ini + 1;
+	*s3 = (char *)malloc(size + 1);
+	if (!s3)
 		return (NULL);
-	f = 0;
-	while (f < len && s[i])
-	{
-		sub[f] = (char) s[i];
-		i++;
-		f++;
-	}
-	sub[f] = '\0';
-	return (sub);
+	ft_strlcpy(s3, s1 + ini, size);
+	return (s3);
 }

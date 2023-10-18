@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
+/*   By: cmoura-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 19:05:39 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/18 18:44:21 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/07/19 17:35:41 by cmoura-p          #+#    #+#             */
+/*   Updated: 2023/08/05 14:51:26 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-char	*ft_strdup(const char *str)
+void	ft_putchar(char c)
 {
-	char	*ptr;
-	size_t	size;
+	write(1, &c, 1);
+}
 
-	size = ft_strlen(str) + 1;
-	ptr = (char *) malloc(size * sizeof(char));
-	if (!ptr)
-		return (NULL);
-	ft_memcpy(ptr, str, size);
-	return ((char *) ptr);
+int	main(void)
+{
+	ft_putchar('A');
+	return (0);
 }
