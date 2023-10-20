@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:35:41 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/08/05 14:51:26 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:00:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+//#include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_putchar_fd(char c, int fd)
 {
-	write(1, &c, 1);
+	write(fd, &c, 1);
 }
 
-int	main(void)
+int main(void) 
 {
-	ft_putchar('A');
-	return (0);
+ 	char character = 'A';
+    // Escreve o caractere 'A' na saída padrão (stdout)
+    ft_putchar_fd(character, STDOUT_FILENO);
+
+    // Escreve o caractere 'B' na saída de erro padrão (stderr)
+    ft_putchar_fd('B', STDERR_FILENO);
 }

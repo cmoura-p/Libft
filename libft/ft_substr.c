@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:59:06 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/18 17:04:13 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:30:28 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+//#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -26,11 +29,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	f = 0;
 	while (f < len && s[i])
-	{
-		sub[f] = (char) s[i];
-		i++;
-		f++;
-	}
+		sub[f++] = (char) s[i++];
 	sub[f] = '\0';
 	return (sub);
+}
+
+int main(void)
+{
+ 	const char *input_string = "Esta é uma string de teste";
+    unsigned int start = 0;
+    size_t length = 18;
+
+    char *result = ft_substr(input_string, start, length);
+
+    if (result) {
+        printf("Substring: %s\n", result);
+        free(result); // Não se esqueça de liberar a memória alocada pela função ft_substr.
+    } else {
+        printf("Erro: a substring não pôde ser criada.\n");
+    }
 }

@@ -3,25 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:34:58 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/16 21:08:36 by Claudia M P      ###   ########.fr       */
+/*   Updated: 2023/10/20 11:02:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
+#include <stdio.h>
+#include <string.h>
+
+
+void	*ft_memcpy(void *dest, const void *src, size_t size);
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	unsigned char	*memosrc;
-	unsigned char	*memodest;
-	size_t			i;
+	const char	*memosrc;
+	char		*memodest;
+	size_t		i;
 
-	memosrc = (unsigned char *)src;
-	memodest = (unsigned char *)dest;
+	memosrc = (const char *)src;	memodest = (char *)dest;
 	i = size;
-	if (src == NULL || dest == NULL)
+	if (!src || !dest)
 		return (NULL);
 	if (memosrc < memodest)
 	{
@@ -30,8 +34,17 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 			i--;
 			memodest[i] = memosrc[i];
 		}
-		return (dest);
+		return (memodest);
 	}
 	ft_memcpy(memodest, memosrc, size);
-	return (dest);
+	return (memodest);
+}
+
+int main(void) 
+{
+    // Exemplo com memmove
+    char s[] = "ABCDEFG";
+	char d[] = "HIJKLMNOPQ";
+    ft_memmove(d, s, 8);
+    printf("Exemplo com memmove: %s\n", d);
 }

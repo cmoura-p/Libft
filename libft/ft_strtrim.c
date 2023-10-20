@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:43:59 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/18 18:45:07 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:39:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -33,4 +36,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	ft_strlcpy(s3, s1 + ini, size);
 	return (s3);
+}
+
+int main(void)
+{
+ 	const char *input_string = "42Olá, mundo!42";
+    const char *set = "42";
+
+    char *result = ft_strtrim(input_string, set);
+
+    if (result) {
+        printf("String após a remoção dos caracteres de set: \"%s\"\n", result);
+        free(result); // Não se esqueça de liberar a memória alocada pela função ft_strtrim.
+    } else {
+        printf("Erro: a função ft_strtrim não pôde ser executada.\n");
+    }
 }
