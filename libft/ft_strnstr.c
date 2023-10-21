@@ -18,26 +18,37 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *largestr, const char *smallstr, size_t len)
+char	*ft_strnstr(const char *strl, const char *strs, size_t size)
 {
-	size_t	h;
+	size_t	i;
 	size_t	n;
 
-	h = 0;
-	if (smallstr[0] == '\0')
-		return ((char *)largestr);
-	while (largestr[h] != '\0')
+	i = 0;
+	if (strs[0] == '\0')
+		return ((char *)strl);
+	while (strl[i] != '\0')
 	{
 		n = 0;
-		while (largestr[h + n] == smallstr[n] && (h + n) < len)
+		while (strl[i + n] == strs[n] && (i + n) < size)
 		{
-			if (largestr[h + n] == '\0' && smallstr[n] == '\0')
-				return ((char *)&largestr[h]);
+			if (strl[i + n] == '\0' && strs[n] == '\0')
+				return ((char *)&strl[i]);
 			n++;
 		}
-		if (smallstr[n] == '\0')
-			return ((char *)largestr + h);
-		h++;
+		if (strs[n] == '\0')
+			return ((char *)strl + i);
+		i++;
 	}
 	return (0);
+}
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+	const char *large = "The quick brown fox jumps over the lazy dog";
+	const char *small = "llazy";
+	char *result = ft_strnstr(large, small, 42);
+	printf("Result: %s\n", result);
+	return 0;
 }

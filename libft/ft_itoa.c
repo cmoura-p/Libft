@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:02:19 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/20 00:19:05 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/20 18:28:41 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char	*ft_itoa(int n)
 	str = (char *) malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (0);
+	str[i] = '\0';
 	while (i-- > 0)
 	{
 		str[i] = num % 10 + '0';
@@ -45,20 +46,17 @@ char	*ft_itoa(int n)
 	}
 	if (negativo)
 		str[0] = '-';
-	return (str + '\0');
+	return (str);
 }
+#include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    long int num = 1234567890123456789;
-    char *str = ft_itoa(num);
+char	*ft_itoa(int n);
 
-    if (str != NULL) {
-        printf("O número passado foi : %ld\n", num);
-		printf("O número formato ficou : %s\n", str);
-        free(str); // Libera a memória alocada para a string
-    } else {
-        printf("Falha na alocação de memória.\n");
-    }
-
-    return 0;
+int	main(void)
+{
+	printf("%s\n", ft_itoa(123));
+	printf("%s\n", ft_itoa(-123));
+	printf("%s\n", ft_itoa(0));
+	return (0);
 }

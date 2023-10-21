@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:53:49 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/16 18:58:03 by Claudia M P      ###   ########.fr       */
+/*   Updated: 2023/10/20 18:25:20 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,17 @@ int	ft_isprint(int c)
 	if (c > 31 && c < 127)
 		return (35);
 	return (0);
+}
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+	int c = 'A';
+	printf("Is %c printable? %d\n", c, ft_isprint(c));
+	c = '\n';
+	printf("Is newline printable? %d\n", ft_isprint(c));
+	c = 0;
+	printf("Is null printable? %d\n", ft_isprint(c));
+	return 0;
 }

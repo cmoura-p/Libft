@@ -3,25 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 11:34:28 by marvin            #+#    #+#             */
-/*   Updated: 2023/10/20 11:34:28 by marvin           ###   ########.fr       */
+/*   Created: 2023/10/20 19:11:15 by cmoura-p          #+#    #+#             */
+/*   Updated: 2023/10/20 19:11:15 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-int main(void) 
+#include "libft.h"
+#include <unistd.h>
+
+void	ft_putstr_fd(char *str, int fd);
+void	ft_putchar_fd(char c, int fd);
+
+void	ft_putendl_fd(char *s, int fd)
 {
- 	/* ft_putsrt_fd ft_putendle_fd ft_putnbr_fd */
-	char *message = "Hello, World!";
-    
-    // Escreve a mensagem na saída padrão (stdout)
-    ft_putendl_fd(message, STDOUT_FILENO);
+	if (s)
+	{
+		ft_putstr_fd(s, fd);
+		ft_putchar_fd('\n', fd);
+	}
+}
 
-    // Escreve a mensagem na saída de erro padrão (stderr)
-    ft_putstr_fd(message, STDERR_FILENO);
+#include "libft.h"
 
-	// Escreve o número na saída de erro padrão (stderr)
-    ft_putnbr_fd(-0, STDERR_FILENO); */
+int main(void)
+{
+	ft_putendl_fd("Hoje eh sexta-feira, world!", 1);
+	return 0;
+}
 
+void	ft_putstr_fd(char *str, int fd)
+{
+	int	i;
+	
+	if (str)
+	{
+		i = 0;
+		while (str[i])
+		{
+			ft_putchar_fd(str[i], fd);
+			i++;
+		}
+	}
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

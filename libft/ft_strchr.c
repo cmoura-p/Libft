@@ -28,3 +28,26 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *)s);
 }
+
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+	char *str = "Hello, world!";
+	char *ptr;
+
+	ptr = ft_strchr(str, 'w');
+	if (ptr != NULL)
+		printf("Found character 'w' at position: %ld\n", ptr - str);
+	else
+		printf("Character 'w' not found.\n");
+
+	ptr = ft_strchr(str, 'z');
+	if (ptr != NULL)
+		printf("Found character 'z' at position: %ld\n", ptr - str);
+	else
+		printf("Character 'z' not found.\n");
+
+	return 0;
+}

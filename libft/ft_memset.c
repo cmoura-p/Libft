@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:32:35 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/19 19:25:34 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/20 17:55:08 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,17 @@ void	*ft_memset(void *dest, int p, size_t size)
 	while (i < size)
 		memo[i++] = p;
 	return (memo);
+}
+
+#include <stdio.h>
+#include <string.h>
+#include "libft.h"
+
+int main(void)
+{
+	char str[50] = "Hello, world!";
+	printf("Before memset(): %s\n", str);
+	ft_memset(str, '*', 7);
+	printf("After memset(): %s\n", str);
+	return 0;
 }

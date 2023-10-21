@@ -3,76 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 12:05:05 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/20 11:32:02 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/20 20:11:14 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <unistd.h>
+void	ft_putchar_fd(char c, int fd);
 
-void	ft_putnbr(int nb)
+void	ft_putnbr_fd(int n, int fd)
 {
-	long int	n;
-
-	n = nb;
 	if (n < 0)
 	{
-		write(1, "-", 1);
-		n *= -1;
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		n = n % 10;
 	}
 	if (n < 10)
-	{
-		n = n + '0';
-		write(1, &n, 1);
-	}
-	else
-	{
-		ft_putnbr(n / 10);
-		n = n % 10 + '0';
-		write(1, &n, 1);
-	}
+		ft_putchar_fd(n + 48, fd);
 }
 
-int	ft_atoi(char *str)
-{
-	int	i;
-	int	num;
+#include <unistd.h>
 
-	i = 0;
-	num = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	while (str[i] != '\0')
-	{
-		if (str[i] == '-')
-			i++;
-		if (str[i] >= '0' && str[i] <= '9')
-			num = num * 10 + str[i] - '0';
-		else
-		{
-			write(1, ":(\n", 3);
-			return (0);
-		}
-		i++;
-	}
-	if (str[0] == '-')
-		num = num * -1;
-	return (num);
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }
 
-int	main(int argc, char **argv)
+int		main(void)
 {
-	int	x;
-
-	if (argc == 2)
-	{
-		x = (ft_atoi(argv[1]));
-		ft_putnbr(x);
-		write (1, "\n", 1);
-	}
-	else
-		write (1, ":(\n", 3);
+	ft_putnbr_fd(412, STDOUT_FILENO);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	ft_putnbr_fd(-55, STDOUT_FILENO);
+	ft_putchar_fd('\n', STDOUT_FILENO);
+	ft_putnbr_fd(0, STDOUT_FILENO);
+	ft_putchar_fd('\n', STDOUT_FILENO);
 	return (0);
 }

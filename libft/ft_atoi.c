@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:26:24 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/16 18:56:00 by Claudia M P      ###   ########.fr       */
+/*   Updated: 2023/10/20 17:34:26 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,22 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	return (num * sign);
+}
+
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+	char *str1 = "12345";
+	char *str2 = "-6789";
+	char *str3 = "  \t\n\v\f\r 42";
+	char *str4 = "invalid";
+
+	printf("ft_atoi(\"%s\") = %d\n", str1, ft_atoi(str1));
+	printf("ft_atoi(\"%s\") = %d\n", str2, ft_atoi(str2));
+	printf("ft_atoi(\"%s\") = %d\n", str3, ft_atoi(str3));
+	printf("ft_atoi(\"%s\") = %d\n", str4, ft_atoi(str4));
+
+	return 0;
 }

@@ -18,3 +18,13 @@ int	ft_isdigit(int c)
 		return (28);
 	return (0);
 }
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+	int c = 'A';
+	int result = ft_isdigit(c);
+	printf("Is %c a digit? %s\n", c, result ? "Yes" : "No");
+	return 0;
+}

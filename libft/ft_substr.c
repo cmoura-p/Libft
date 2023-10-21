@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:59:06 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/20 11:30:28 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/21 21:02:32 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 //#include "libft.h"
-
+ 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
@@ -37,8 +37,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 int main(void)
 {
  	const char *input_string = "Esta é uma string de teste";
-    unsigned int start = 0;
-    size_t length = 18;
+    unsigned int start = 10;
+    size_t length = 8;
 
     char *result = ft_substr(input_string, start, length);
 

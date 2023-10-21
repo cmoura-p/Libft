@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:33:31 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/19 20:38:14 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/20 19:29:21 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,25 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 	i = 0;
 	while (i < size)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		((char *)dest)[i] = ((const char *)src)[i];
 		i++;
 	}
 	return (dest);
+}
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "libft.h"
+
+int main(void)
+{
+	char src[] = "Fatima R Medeiros";
+	//char src[] = "A                  ";
+	char dest[50];
+	size_t n = 30;
+
+	ft_memcpy(dest, src, n);
+	printf("src: %s\n", src);
+	printf("dest: %s\n", dest);
+	return (0);
 }

@@ -18,3 +18,13 @@ int	ft_isascii(int c)
 		return (21);
 	return (0);
 }
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+	int c = 0;
+	int result = ft_isascii(c);
+	printf("Is %c an ASCII character? %s\n", c, result ? "Yes" : "No");
+	return 0;
+}

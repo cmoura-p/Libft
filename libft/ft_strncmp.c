@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
+/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 20:21:37 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/17 16:32:37 by Claudia M P      ###   ########.fr       */
+/*   Updated: 2023/10/20 21:12:12 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,24 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (i == n)
 		i--;
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+	char *s2 = "Hello, world!";
+	char *s1 = "Hello, there!";
+	int n = 15;
+
+	int result = ft_strncmp(s1, s2, n);
+
+	if (result == 0)
+		printf("The first %d characters of \"%s\" and \"%s\" are the same.\n", n, s1, s2);
+	else if (result < 0)
+		printf("The first %d characters of \"%s\" are less than the first %d characters of \"%s\".\n", n, s1, n, s2);
+	else
+		printf("The first %d characters of \"%s\" are greater than the first %d characters of \"%s\".\n", n, s1, n, s2);
+
+	return 0;
 }

@@ -16,6 +16,8 @@
 
 #include "libft.h"
 
+size_t	ft_strlen(const char *str);
+
 char	*ft_strrchr(const char *s, int c)
 {
 	char	find_c;
@@ -34,4 +36,25 @@ char	*ft_strrchr(const char *s, int c)
 		s++;
 	}
 	return ((char *)found_c);
+}
+#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+	char str[] = "Hello, world!";
+	char *result = ft_strrchr(str, 'H');
+	printf("Result: %s\n", result);
+	return 0;
+}
+size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }
