@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:35:41 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/20 20:16:25 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:32:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-//#include "libft.h"
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
+/*#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main(void) 
 {
@@ -30,3 +31,4 @@ int main(void)
     // Escreve o caractere 'B' na saída de erro padrão (stderr)
     ft_putchar_fd('C', STDERR_FILENO);
 }
+*/

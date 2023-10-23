@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 21:46:14 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/21 20:03:30 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:41:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		}
 	}
 }
-#include "libft.h"
+
+/*#include "libft.h"
 #include <stdio.h>
 
 void print_char(unsigned int i, char *c)
@@ -40,3 +41,4 @@ int main(void)
 	ft_striteri(str, &print_char);
 	return 0;
 }
+*/

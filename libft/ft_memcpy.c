@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:33:31 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/20 19:29:21 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:29:04 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 	}
 	return (dest);
 }
-#include <stdio.h>
+
+/*#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "libft.h"
@@ -43,3 +44,4 @@ int main(void)
 	printf("dest: %s\n", dest);
 	return (0);
 }
+*/

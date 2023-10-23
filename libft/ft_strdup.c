@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:05:39 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/20 20:46:17 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:41:04 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *str);
-void	*ft_memcpy(void *dest, const void *src, size_t size);
 
 char	*ft_strdup(const char *str)
 {
@@ -30,6 +24,10 @@ char	*ft_strdup(const char *str)
 	ft_memcpy(ptr, str, size);
 	return ((char *) ptr);
 }
+
+/*#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -65,3 +63,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 	}
 	return (dest);
 }
+*/

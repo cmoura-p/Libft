@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 18:09:14 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/21 20:23:15 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:19:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-#include <stdio.h>
+
+/*#include <stdio.h>
 #include "libft.h"
 
 int main(void)
@@ -29,3 +30,4 @@ int main(void)
 	printf("After: %c\n", c);
 	return 0;
 }
+*/

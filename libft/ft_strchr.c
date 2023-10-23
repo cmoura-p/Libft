@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// busca a primeira ocorrencia da variavel c na string *s
-// retorna NULL se nao encontrar
-// retorna o ponteiro do caracte correspondente
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -29,7 +26,7 @@ char	*ft_strchr(const char *s, int c)
 	return ((char *)s);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include "libft.h"
 
 int main(void)
@@ -51,3 +48,4 @@ int main(void)
 
 	return 0;
 }
+*/

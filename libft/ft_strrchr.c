@@ -10,13 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// busca a ultima ocorrencia da variavel c na string *s
-// retorna NULL se nao encontrar
-// retorna o ponteiro do caracte correspondente
-
 #include "libft.h"
-
-size_t	ft_strlen(const char *str);
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -37,7 +31,8 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return ((char *)found_c);
 }
-#include <stdio.h>
+
+/*#include <stdio.h>
 #include "libft.h"
 
 int main(void)
@@ -58,3 +53,4 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
+*/

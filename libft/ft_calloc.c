@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 18:49:16 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/20 18:09:59 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:23:15 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memset(void *dest, int p, size_t size);
-void	ft_bzero(void *b, size_t len);
-
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -26,6 +22,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero (ptr, nmemb * size);
 	return (ptr);
 }
+
+/*void	*ft_memset(void *dest, int p, size_t size);
+void	ft_bzero(void *b, size_t len);
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -67,3 +66,4 @@ void	*ft_memset(void *dest, int p, size_t size)
 		memo[i++] = p;
 	return (memo);
 }
+*/

@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 21:47:00 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/21 19:55:38 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/23 01:16:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-
-static size_t count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*s && *s == c)
@@ -36,6 +34,7 @@ static size_t count_words(char const *s, char c)
 		count++;
 	return (count);
 }
+
 static size_t	word_position(char const *s, char c)
 {
 	size_t	position;
@@ -75,6 +74,7 @@ char	**ft_split(char const *s, char c)
 	lista[words] = NULL;
 	return (lista);
 }
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -94,11 +94,10 @@ int main(void)
 		printf("%s\n", result[i]);
 		free(result[i]);
 	}
-
 	free(result);
-
 	return (0);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
@@ -117,3 +116,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[f] = '\0';
 	return (sub);
 }
+*/

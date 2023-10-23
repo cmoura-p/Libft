@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:26:24 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/20 17:34:26 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:20:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 	return (num * sign);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include "libft.h"
 
 int main(void)
@@ -50,3 +50,4 @@ int main(void)
 
 	return 0;
 }
+*/

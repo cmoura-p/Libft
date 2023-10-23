@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 10:44:10 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/20 21:09:43 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:43:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// concatena em *dest o conteudo de *src
-// retorna o tamanho total da string concatenada
-
 #include "libft.h"
-
-size_t	ft_strlen(const char *str);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 size_t	ft_strlcat(char *dest, const char *src, size_t finalsize)
 {
@@ -30,7 +24,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t finalsize)
 	return (destsize + ft_strlcpy(&dest[destsize], src, finalsize - destsize));
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include "libft.h"
 
 int main(void)
@@ -76,4 +70,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (srcsize);
 }
-
+*/

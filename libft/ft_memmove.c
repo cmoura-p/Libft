@@ -3,41 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:34:58 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/21 15:51:28 by Claudia M P      ###   ########.fr       */
+/*   Updated: 2023/10/22 23:55:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <stdio.h>
-#include <string.h>
-void	*ft_memcpy(void *dest, const void *src, size_t size);
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	const char	*memosrc;
-	char		*memodest;
+	unsigned const char	*memosrc;
+	unsigned char		*memodest;
 	size_t		i;
 
-	memosrc = (const char *)src;	
-	memodest = (char *)dest;
-	i = size;
-	if (!src && !dest)
-		return (NULL);
-	if (memosrc < memodest)
+	memosrc = (unsigned const char *)src;
+	memodest = (unsigned char *)dest;
+	i = 1;
+	if (memosrc < memodest) 
 	{
-		while (i)
+		while (i <= size)
 		{
-			memodest[i] = memosrc[i];
-			i--;
+			memodest[size - i] = memosrc[size - i];
+			i++;
 		}
-		return (memodest);
 	}
-	ft_memcpy(memodest, memosrc, size);
+	else
+		ft_memcpy(memodest, memosrc, size);
 	return (memodest);
 }
+/*
+#include <stdio.h>
+#include <string.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
@@ -53,12 +51,19 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 	}
 	return (dest);
 }
+
 int main(void)
 {
-	char str1[] = "Geeks";
-	char str2[] = "Quiz";
+	char str2[] = "Alessandra, ";
+	char str1[] = " esta com dor ";
+	puts(" destino " );
 	puts(str1); 
-	ft_memmove(str1, str2, sizeof(str2)+1); 
-	puts("\nstr1 after memmove "); 
+	puts("\n origem" );
+	puts(str2);
+	puts("\n tamanho ");
+	printf("%lu", sizeof(str2));
+	ft_memmove(str1, str2, sizeof(str2)); 
+	puts("\n resultado depois do memmove "); 
 	puts(str1);  
 }
+*/

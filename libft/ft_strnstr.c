@@ -10,12 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// busca o ocorrencia small na string large com o tamanho de len
-// para de buscar quando encontrar '/0'
-// retorna NULL se nao encontrar
-// se small estiver vazio retorna a large
-// se encontrar retorna o primeiro ponteiro de largest
-
 #include "libft.h"
 
 char	*ft_strnstr(const char *strl, const char *strs, size_t size)
@@ -41,7 +35,8 @@ char	*ft_strnstr(const char *strl, const char *strs, size_t size)
 	}
 	return (0);
 }
-#include <stdio.h>
+
+/*#include <stdio.h>
 #include "libft.h"
 
 int main(void)
@@ -52,3 +47,4 @@ int main(void)
 	printf("Result: %s\n", result);
 	return 0;
 }
+*/

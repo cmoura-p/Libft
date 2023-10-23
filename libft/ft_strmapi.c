@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 22:06:07 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/21 20:46:34 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:45:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	ft_mapping (unsigned int index, char c);
-size_t	ft_strlen(const char *str);
-
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -35,13 +31,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_s[i] = '\0';
 	return (new_s);
 }
-#include <stdio.h>
+
+/*#include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
 
 int	main(void)
 {
-	char const	*s = "Hello, world!";
+	char const	*s = "KIKI ja esta BOA!!!";
 	char		*new_s;
 
 	new_s = ft_strmapi(s, ft_mapping);
@@ -69,3 +66,4 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
+*/

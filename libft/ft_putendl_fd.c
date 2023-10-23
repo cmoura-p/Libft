@@ -11,10 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
-
-void	ft_putstr_fd(char *str, int fd);
-void	ft_putchar_fd(char c, int fd);
 
 void	ft_putendl_fd(char *s, int fd)
 {
@@ -25,6 +21,7 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 }
 
+/*#include <unistd.h>
 #include "libft.h"
 
 int main(void)
@@ -52,3 +49,4 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+*/

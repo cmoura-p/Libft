@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:00:11 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/20 21:07:48 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/22 01:44:12 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// copia em *dest o conteudo de *src
-// retorna o tamanho total da string copiada
-
 #include "libft.h"
-size_t	ft_strlen(const char *str);
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -36,7 +32,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (srcsize);
 }
-#include <stdio.h>
+
+/*#include <stdio.h>
 #include "libft.h"
 
 int main(void)
@@ -61,3 +58,4 @@ size_t	ft_strlen(const char *str)
 	}
 	return (i);
 }
+*/
