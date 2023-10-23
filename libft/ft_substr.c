@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 19:59:06 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/23 01:22:01 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/23 22:35:50 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 int main(void)
 {
- 	const char *input_string = "Esta é uma string de teste";
-    unsigned int start = 10;
-    size_t length = 8;
+ 	const char *input_string = "hola";
+    unsigned int start = 0;
+    size_t length = 18446;
 
     char *result = ft_substr(input_string, start, length);
 

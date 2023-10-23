@@ -6,7 +6,7 @@
 /*   By: cmoura-p <cmoura-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:24:40 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/20 20:52:26 by cmoura-p         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:50:45 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s3 [i] = '\0';
 	return (s3);
 }
+
 /*
 #include <stdio.h>
 #include <stdlib.h>

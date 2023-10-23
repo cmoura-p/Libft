@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:34:58 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/22 23:55:06 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/23 18:47:23 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 {
 	unsigned const char	*memosrc;
 	unsigned char		*memodest;
-	size_t		i;
+	size_t				i;
 
 	memosrc = (unsigned const char *)src;
 	memodest = (unsigned char *)dest;

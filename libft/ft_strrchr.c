@@ -14,31 +14,23 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	find_c;
-	char	*found_c;
-	int		size;
+	int	size;
 
-	find_c = c;
-	found_c = NULL;
-	size = ft_strlen(s);
-	if (c == '\0')
-		return ((char *)s + size);
-	while (*s)
-	{
-		if (*s == find_c)
-			found_c = (char *) s;
-		s++;
-	}
-	return ((char *)found_c);
+	size = ft_strlen((char *)s);
+	while (size != 0 && s[size] != (char)c)
+		size--;
+	if (s[size] == (char)c)
+		return ((char *)&s[size]);
+	return (NULL);
 }
-
-/*#include <stdio.h>
+/*
+#include <stdio.h>
 #include "libft.h"
 
 int main(void)
 {
-	char str[] = "Hello, world!";
-	char *result = ft_strrchr(str, 'H');
+	char str[] = "teste";
+	char *result = ft_strrchr(str, '\0');
 	printf("Result: %s\n", result);
 	return 0;
 }

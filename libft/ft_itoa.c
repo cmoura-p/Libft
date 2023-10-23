@@ -3,45 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 19:02:19 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/22 17:48:05 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/23 22:38:32 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-char	*numbuild(long int num, int i)
+static int	senegativ(int i)
 {
-	char	*numstr;
-
-	numstr = (char *)malloc(i + 1);
-	if (numstr == NULL)
-		return (NULL);
-	if (num < 0)
-	{
-		numstr[0] = '-';
-		num *= -1;
-		i++;
-	}
-	numstr[i + 1] = '\0';
-	while (num > 0)
-	{
-		numstr[i] = (num % 10) + '0';
-		num = num / 10;
-		i--;
-	}
-	return (numstr);
+	if (i < 0)
+		return (1);
+	return (0);
 }
 
-int	numsize(long int n)
+static int	numsize(int n)
 {
 	int	i;
 
-	i = 0;
-	if (n == 0)
-		return (1);
+	i = 1;
 	while (n)
 	{
 		n = n / 10;
@@ -52,28 +36,83 @@ int	numsize(long int n)
 
 char	*ft_itoa(int n)
 {
-	char		*str;
-	int			i;
-	long int	num;
+	char	*str;
+	int		i;
+	int		negativo;
 
-	num = n;
-	i = numsize(num);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	negativo = senegativ(n);
+	if (negativo)
+		n = -n;
+	i = numsize(n) + negativo;
+	str = (char *) malloc(sizeof(char) * (i + 1));
+	if (!str)
+		return (NULL);
+	str[i - 1] = '\0';
 	i--;
-	str = (char *)numbuild(num, i);
+	if (negativo)
+		str[0] = '-';
+	while (n != 0)
+	{
+		str[i - 1] = (n % 10) + '0';
+		n = n / 10;
+		i--;
+	}
 	return (str);
 }
 
-/*#include <stdio.h>
-#include <stdlib.h>
-
+/*
 int	main(void)
 {
-	printf("%s\n", ft_itoa(698));
-	printf("%s\n", ft_itoa(-123));
-	printf("%s\n", ft_itoa(98765));
-	printf("%s\n", ft_itoa(0000));
-	printf("%s\n", ft_itoa(-8785));
 	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(9));
+	printf("%s\n", ft_itoa(-9));
+	printf("%s\n", ft_itoa(10));
+	printf("%s\n", ft_itoa(-10));
+	printf("%s\n", ft_itoa(7));
 	return (0);
+}
+
+char	*ft_strdup(const char *str)
+{
+	char	*ptr;
+	size_t	size;
+
+	size = ft_strlen(str) + 1;
+	ptr = (char *) malloc(size * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	ft_memcpy(ptr, str, size);
+	return ((char *) ptr);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+void	*ft_memcpy(void *dest, const void *src, size_t size)
+{
+	size_t	i;
+
+	if (!src && !dest)
+		return (dest);
+	i = 0;
+	while (i < size)
+	{
+		((char *)dest)[i] = ((const char *)src)[i];
+		i++;
+	}
+	return (dest);
 }
 */
