@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 21:47:00 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/23 19:11:43 by Claudia M P      ###   ########.fr       */
+/*   Updated: 2023/10/25 15:49:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ static size_t	count_words(char const *s, char c)
 	int	count;
 
 	count = 0;
-	while (*s && *s == c)
-		s++;
 	while (*s)
 	{
 		if (*s == c)
@@ -27,25 +25,20 @@ static size_t	count_words(char const *s, char c)
 			while (*s && *s == c)
 				s++;
 		}
-		while (*s && *s != c)
+		else
 			s++;
 	}
-	if (*(s - 1) != c)
-		count++;
 	return (count);
 }
 
-static size_t	word_position(char const *s, char c)
+static size_t	word_size(char const *s, char c)
 {
-	size_t	position;
+	size_t	size;
 
-	position = 0;
-	while (*s && *s != c)
-	{
-		position++;
-		s++;
-	}
-	return (position);
+	size = 0;
+	while (s[size] && s[size] != c)
+		size++;
+	return (size);
 }
 
 char	**ft_split(char const *s, char c)
@@ -58,22 +51,27 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	lista = malloc(sizeof(char *) * (words + 1));
+	lista = (char **) ft_calloc(words + 1, sizeof(char *));
 	if (!lista)
 		return (NULL);
 	i = 0;
-	while (i < words)
+	while (s[i])
 	{
-		while (*s && *s == c)
-			s++;
-		pos = word_position(s, c);
-		lista[i] = ft_substr(s, 0, pos);
-		s += pos + 1;
-		i++;
+		if (s[i] != c)
+		{
+			pos = word_size(s, c);
+			lista[i] = ft_substr(s, 0, pos);
+			s += pos;
+			i++;
+		}
+		else
+			i++;
 	}
-	lista[words] = NULL;
+	
+	lista[words] = 0;
 	return (lista);
 }
+
 /*
 #include <stdio.h>
 #include <stdlib.h>

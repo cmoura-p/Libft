@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 18:49:16 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/22 01:23:15 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/25 15:14:33 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	ptr = (char *) malloc(nmemb * size);
+	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
 	ft_bzero (ptr, nmemb * size);
