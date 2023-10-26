@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 18:49:16 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/25 19:44:56 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/10/26 18:35:06 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/26 18:39:32 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_calloc(size_t nmemb, size_t size)
+/*
+Iterates the list ’lst’ and applies the function
+’f’ on the content of each node. Creates a new
+list resulting of the successive applications of
+the function ’f’. The ’del’ function is used to
+delete the content of a node if needed.
+*/
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	void	*ptr;
-
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	
 }

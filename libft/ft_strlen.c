@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 19:25:51 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/22 01:44:46 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/25 21:05:03 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i])
-	{
+	while (str[i] != '\0')
 		i++;
-	}
 	return (i);
 }
-
-/*#include <stdio.h>
-#include "libft.h"
-
-int main(void)
-{
-	char *str = "Hello, BIG world!";
-	size_t len = ft_strlen(str);
-	printf("Length of '%s' is %zu\n", str, len);
-	return 0;
-}
-*/

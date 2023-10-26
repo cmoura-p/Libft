@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 19:59:06 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/25 19:54:00 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/10/26 18:31:08 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/26 20:00:46 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+/*
+Returns the last node of the list.
+*/
+t_list *ft_lstlast(t_list *lst)
 {
-	char	*sub;
-	size_t	size;
+	t_list	*lastnode;
 
-	if (!s)
+	if (!lst)
 		return (NULL);
-	size = ft_strlen(s);
-	if (start >= size)
-		return (ft_strdup(""));
-	if (len > (size - start))
-		len = size - start;
-	sub = (char *) malloc(sizeof(char) * (len + 1));
-	if (!sub)
-		return (NULL);
-	if (s[start])
-		ft_memcpy(sub, s + start, len + 1);
-	sub[len] = '\0';
-	return (sub);
+	lastnode = lst;
+	while (lastnode)
+		lastnode = lastnode->next;
+	return (lastnode);
 }

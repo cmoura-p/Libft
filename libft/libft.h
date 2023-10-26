@@ -52,4 +52,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t finalsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *str);
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
 #endif

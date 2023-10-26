@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   lstadd_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 18:49:16 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/25 19:44:56 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/10/26 18:31:52 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/26 18:41:45 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_calloc(size_t nmemb, size_t size)
+/*
+Adds the node ’new’ at the end of the list.
+*/
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-	void	*ptr;
-
-	ptr = malloc(nmemb * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb * size);
-	return (ptr);
+	
 }

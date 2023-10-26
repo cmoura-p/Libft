@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:35:25 by Claudia M P       #+#    #+#             */
-/*   Updated: 2023/10/22 01:28:06 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/26 15:22:10 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memchr(const void *strg, int p, size_t size)
 {
 	char		*string;
 
-	if (strg == NULL)
-		return (NULL);
 	string = (void *)strg;
 	while (size--)
 	{
