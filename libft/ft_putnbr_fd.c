@@ -6,7 +6,7 @@
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 12:05:05 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/25 20:14:51 by Claudia M P      ###   ########.fr       */
+/*   Updated: 2023/10/29 19:51:00 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_putnbr_fd(int n, int fd)
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	
 }
 
 int		main(void)

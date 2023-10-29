@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/26 15:19:48 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/29 19:57:35 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/10/26 18:31:08 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/29 19:14:13 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *str, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	write (fd, str, ft_strlen(str));
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst -> next;
+	return (lst);
 }
-
-//	int	i;
-//
-//	if (str)
-//	{
-//		i = 0;
-//		while (str[i])
-//		{
-//			ft_putchar_fd(str[i], fd);
-//			i++;
-//		}
-//	}

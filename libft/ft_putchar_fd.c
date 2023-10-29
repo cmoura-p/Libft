@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 17:35:41 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/22 01:32:21 by marvin           ###   ########.fr       */
+/*   Updated: 2023/10/29 19:50:47 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void)
     // Escreve o caractere 'A' na saída padrão (stdout)
     ft_putchar_fd(character, STDOUT_FILENO);
 
-    // Escreve o caractere 'B' na saída de erro padrão (stderr)
+    // Escreve o caractere 'B' na saída de erro parão (stderr)
     ft_putchar_fd('C', STDERR_FILENO);
 }
 */

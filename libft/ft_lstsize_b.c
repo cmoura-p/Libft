@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/26 15:19:48 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/29 19:57:35 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/10/26 18:29:57 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/10/29 19:17:23 by Claudia M P      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *str, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	write (fd, str, ft_strlen(str));
-}
+	int		qtd;
 
-//	int	i;
-//
-//	if (str)
-//	{
-//		i = 0;
-//		while (str[i])
-//		{
-//			ft_putchar_fd(str[i], fd);
-//			i++;
-//		}
-//	}
+	qtd = 0;
+	while (lst)
+	{
+		lst = lst -> next;
+		qtd++;
+	}
+	return (qtd);
+}
