@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstmap_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Claudia M Pickett <Claudia M Pickett@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/26 15:19:48 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/11/01 20:52:58 by Claudia M P      ###   ########.fr       */
+/*   Created: 2023/10/26 18:35:06 by Claudia M P       #+#    #+#             */
+/*   Updated: 2023/11/01 18:05:07 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *str, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (fd < 0)
-		return ;
-	write (fd, str, ft_strlen(str));
-}
+	t_list	*new;
+	t_list	*tmp;
+	void	*cont;
 
-//	int	i;
-//
-//	if (str)
-//	{
-//		i = 0;
-//		while (str[i])
-//		{
-//			ft_putchar_fd(str[i], fd);
-//			i++;
-//		}
-//	}
+	new = NULL;
+	if (!lst || !f || !del)
+		return (NULL);
+	while (lst)
+	{
+		cont = f(lst->content);
+		tmp = ft_lstnew(cont);
+		if (!tmp)
+		{
+			del(cont);
+			ft_lstclear(&new, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new, tmp);
+		lst = lst->next;
+	}
+	return (new);
+}

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:26:24 by cmoura-p          #+#    #+#             */
-/*   Updated: 2023/10/22 01:20:54 by marvin           ###   ########.fr       */
+/*   Updated: 2023/11/01 20:04:29 by cmoura-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	ft_atoi(const char *str)
 	return (num * sign);
 }
 
+//
 /*#include <stdio.h>
 #include "libft.h"
 
