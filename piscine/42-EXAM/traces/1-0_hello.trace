@@ -1,8 +1,0 @@
-gcc: error: hello/hello.c: No such file or directory
-gcc: fatal error: no input files
-compilation terminated.
-
-Hello World!$
--------
-Hello World!$
--------
