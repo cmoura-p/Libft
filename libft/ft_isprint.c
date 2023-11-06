@@ -18,18 +18,3 @@ int	ft_isprint(int c)
 		return (35);
 	return (0);
 }
-
-/*#include <stdio.h>
-#include "libft.h"
-
-int main(void)
-{
-	int c = 'A';
-	printf("Is %c printable? %d\n", c, ft_isprint(c));
-	c = '\n';
-	printf("Is newline printable? %d\n", ft_isprint(c));
-	c = 0;
-	printf("Is null printable? %d\n", ft_isprint(c));
-	return 0;
-}
-*/
