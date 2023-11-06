@@ -26,19 +26,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		}
 	}
 }
-
-/*#include "libft.h"
-#include <stdio.h>
-
-void print_char(unsigned int i, char *c)
-{
-	printf("Index %d: %c\n", i, *c);
-}
-
-int main(void)
-{
-	char str[] = "Hello, world!";
-	ft_striteri(str, &print_char);
-	return 0;
-}
-*/

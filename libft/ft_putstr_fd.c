@@ -18,15 +18,3 @@ void	ft_putstr_fd(char *str, int fd)
 		return ;
 	write (fd, str, ft_strlen(str));
 }
-
-//	int	i;
-//
-//	if (str)
-//	{
-//		i = 0;
-//		while (str[i])
-//		{
-//			ft_putchar_fd(str[i], fd);
-//			i++;
-//		}
-//	}

@@ -18,16 +18,3 @@ int	ft_tolower(int c)
 		return (c + 32);
 	return (c);
 }
-
-/*#include <stdio.h>
-#include "libft.h"
-
-int main(void)
-{
-	int c = 'z';
-	printf("Before: %c\n", c);
-	c = ft_tolower(c);
-	printf("After: %c\n", c);
-	return 0;
-}
-*/

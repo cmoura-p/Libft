@@ -26,22 +26,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 	}
 	return (dest);
 }
-
-/*#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "libft.h"
-
-int main(void)
-{
-	char src[] = "Fatima R Medeiros";
-	//char src[] = "A                  ";
-	char dest[50];
-	size_t n = 30;
-
-	ft_memcpy(dest, src, n);
-	printf("src: %s\n", src);
-	printf("dest: %s\n", dest);
-	return (0);
-}
-*/

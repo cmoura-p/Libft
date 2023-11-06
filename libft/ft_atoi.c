@@ -32,23 +32,3 @@ int	ft_atoi(const char *str)
 	}
 	return (num * sign);
 }
-
-//
-/*#include <stdio.h>
-#include "libft.h"
-
-int main(void)
-{
-	char *str1 = "12345";
-	char *str2 = "-6789";
-	char *str3 = "  \t\n\v\f\r 42";
-	char *str4 = "invalid";
-
-	printf("ft_atoi(\"%s\") = %d\n", str1, ft_atoi(str1));
-	printf("ft_atoi(\"%s\") = %d\n", str2, ft_atoi(str2));
-	printf("ft_atoi(\"%s\") = %d\n", str3, ft_atoi(str3));
-	printf("ft_atoi(\"%s\") = %d\n", str4, ft_atoi(str4));
-
-	return 0;
-}
-*/

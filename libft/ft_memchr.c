@@ -25,19 +25,3 @@ void	*ft_memchr(const void *strg, int p, size_t size)
 	}
 	return (NULL);
 }
-
-/*#include <stdio.h>
-#include <string.h>
-#include "libft.h"
-
-int main(void)
-{
-	char str[] = "Hello, world!";
-	char *result = ft_memchr(str, 'x', strlen(str));
-	if (result != NULL)
-		printf("Found 'w' at position %ld\n", result - str);
-	else
-		printf("Did not find character\n");
-	return 0;
-}
-*/

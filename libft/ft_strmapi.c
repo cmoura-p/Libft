@@ -31,39 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	new_s[i] = '\0';
 	return (new_s);
 }
-
-/*#include <stdio.h>
-#include <stdlib.h>
-#include "libft.h"
-
-int	main(void)
-{
-	char const	*s = "KIKI ja esta BOA!!!";
-	char		*new_s;
-
-	new_s = ft_strmapi(s, ft_mapping);
-	printf("Original string: %s\n", s);
-	printf("New string: %s\n", new_s);
-	free(new_s);
-	return (0);
-}
-
-char	ft_mapping (unsigned int index, char c)
-{
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	return (c);
-}
-
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
-*/

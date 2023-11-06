@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	numsize(int n)
+static int	ft_numsize(int n)
 {
 	int	i;
 
@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	if (n == 0)
 		return (ft_strdup("0"));
-	i = numsize(n);
+	i = ft_numsize(n);
 	str = (char *) malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (NULL);

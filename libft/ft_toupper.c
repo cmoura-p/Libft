@@ -18,16 +18,3 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-
-/*#include <stdio.h>
-#include "libft.h"
-
-int main(void)
-{
-	int c = 'a';
-	printf("Before: %c\n", c);
-	c = ft_toupper(c);
-	printf("After: %c\n", c);
-	return 0;
-}
-*/

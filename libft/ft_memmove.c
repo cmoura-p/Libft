@@ -33,37 +33,3 @@ void	*ft_memmove(void *dest, const void *src, size_t size)
 		ft_memcpy(memodest, memosrc, size);
 	return (memodest);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-
-void	*ft_memcpy(void *dest, const void *src, size_t size)
-{
-	size_t	i;
-
-	if (!src && !dest)
-		return (dest);
-	i = 0;
-	while (i < size)
-	{
-		((char *)dest)[i] = ((const char *)src)[i];
-		i++;
-	}
-	return (dest);
-}
-
-int main(void)
-{
-	char str2[] = "Alessandra, ";
-	char str1[] = " esta com dor ";
-	puts(" destino " );
-	puts(str1); 
-	puts("\n origem" );
-	puts(str2);
-	puts("\n tamanho ");
-	printf("%lu", sizeof(str2));
-	ft_memmove(str1, str2, sizeof(str2)); 
-	puts("\n resultado depois do memmove "); 
-	puts(str1);  
-}
-*/

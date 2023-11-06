@@ -30,24 +30,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t size)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-#include "libft.h"
-
-int main(void)
-{
-	char str1[] = "Oi, tudo bem?";
-	char str2[] = "zyxbcdefgh";
-	char str3[] = "abcdefgxyz";
-	int result;
-
-	result = ft_memcmp(str1, str2, 0);
-	printf("Comparing str1 and str2: %d\n", result);
-
-	result = ft_memcmp(str1, str3, 0);
-	printf("Comparing str1 and str3: %d\n", result);
-
-	return 0;
-}
-*/

@@ -35,16 +35,3 @@ char	*ft_strnstr(const char *strl, const char *strs, size_t size)
 	}
 	return (0);
 }
-
-/*#include <stdio.h>
-#include "libft.h"
-
-int main(void)
-{
-	const char *large = "The quick brown fox jumps over the lazy dog";
-	const char *small = "llazy";
-	char *result = ft_strnstr(large, small, 42);
-	printf("Result: %s\n", result);
-	return 0;
-}
-*/

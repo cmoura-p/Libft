@@ -23,17 +23,3 @@ void	*ft_memset(void *dest, int p, size_t size)
 		memo[i++] = p;
 	return (memo);
 }
-
-/*#include <stdio.h>
-#include <string.h>
-#include "libft.h"
-
-int main(void)
-{
-	char str[50] = "Hello, world!";
-	printf("Before memset(): %s\n", str);
-	ft_memset(str, '*', 7);
-	printf("After memset(): %s\n", str);
-	return 0;
-}
-*/
